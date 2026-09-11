@@ -1,10 +1,9 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 
-// Next 16's replacement for the middleware convention. Keeps the Supabase
-// session cookie fresh on protected routes. No-ops when Supabase isn't
-// configured so the app still runs in demo mode.
-export async function proxy(request: NextRequest) {
+// Keep the Supabase session cookie fresh on protected routes. This is a no-op
+// when Supabase is not configured, so the public demo remains self-contained.
+export async function middleware(request: NextRequest) {
   if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
     return NextResponse.next();
   }
