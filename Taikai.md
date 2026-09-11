@@ -8,6 +8,6 @@ GitHubのコントリビューションは一年間の制作や試行錯誤の�
 
 ## 公開メモ
 
+- 公開URL: https://grass-to-art.lolipop-now.app
 - 種別: Next.jsのWebアプリ
 - 認証なしデモは外部設定不要。本番のGitHub連携にはSupabase設定が必要です
-
